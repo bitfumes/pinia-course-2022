@@ -1,17 +1,10 @@
 <template>
-  <button @click="incr">+</button>
-  {{ counter }}
-  <button @click="decr">-</button>
+  <button @click="store.increment">+</button>
+  {{ store.counter }}
+  <button @click="store.decrement">-</button>
 </template>
 
 <script setup>
-import { ref } from "@vue/reactivity";
-
-const counter = ref(0);
-function incr() {
-  counter.value++;
-}
-function decr() {
-  counter.value--;
-}
+import { useCounterStore } from "@/stores/counter";
+const store = useCounterStore();
 </script>
