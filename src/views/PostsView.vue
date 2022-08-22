@@ -1,7 +1,9 @@
 <template>
   <h1>All Posts</h1>
   <div v-for="post in store.posts" :key="post.id">
-    <h3>{{ post.title }}</h3>
+    <router-link :to="`/posts/${post.id}`">
+      <h3>{{ post.title }}</h3>
+    </router-link>
   </div>
 </template>
 
